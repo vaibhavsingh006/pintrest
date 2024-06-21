@@ -1,0 +1,49 @@
+<% include ./partials/header.ejs%>
+<div class="containe">
+  <div class="content">
+    <!--pinterest logo-->
+    <img
+      src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png"
+      alt="pin logo"
+      class="img1"
+    />
+    <p class="header">Sign Up to see more</p>
+
+    <form action="/register" method="post">
+      <input
+        type="text"
+        placeholder="username"
+        name="username"
+        class="detail"
+      /><br />
+      <input
+        type="text"
+        placeholder="fullname"
+        name="fullname"
+        class="detail"
+      /><br />
+      <input
+        type="email"
+        placeholder="Email"
+        name="email"
+        class="detail"
+      /><br />
+      <input
+        type="password"
+        placeholder="Password"
+        name="password"
+        class="detail"
+      />
+      <input type="submit" class="btn int" value="Register Account" />
+    </form>
+
+    <!-- <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, fugit odit
+      rem similique eum adipisci.
+    </p> -->
+  </div>
+  <a href="/login" class="text-center block">
+    Already have a account <span class="font-bold">LogIn</span>
+  </a>
+</div>
+<% include ./partials/footer.ejs%>

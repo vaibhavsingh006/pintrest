@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../stylesheets/feed.css" />
+  </head>
+  <body></body>
+</html>
+    <header>
+    <h1>Pinterest Style Image Galley with Responsive Navigation Bar</h1>
+    </header>
+
+    <div class="container">
+    <% posts?.forEach(function(elem){%>
+    <div class="box">
+        <a
+        href="ttps://oriontralelblog.com/wp-content/uploads/2019/08/IMG_6310.jpg"
+        >
+        <img src="/images/<%= elem?.image %>" alt="image"
+        /></a>
+        <div class="caption"><%= elem.title %></div>
+    </div>
+    <%})%>
+    </div>
+</body>
+</html>

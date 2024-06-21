@@ -1,0 +1,79 @@
+<% include ./partials/header.ejs%>
+<div class="content-profile-page">
+  <div class="profile-user-page card relative">
+    <div class="img-user-profile">
+      <img class="avatar" src="/images/<%= user.profileImage %>" alt="jofpin" />
+    </div>
+    <button>
+      <a href="/logout" class="button" style="color:white;">Logout</a>
+    </button>
+    <button class="right-0 !rounded-l-lg !rounded-r-none">
+      <a href="/feed" class="button" style="color:white;">All Feed</a>
+    </button>
+    <div class="user-profile-data">
+      <h1><%= user.fullname %></h1>
+      <p>@<%= user.username %></p>
+    </div>
+    <ul class="data-user">
+      <li>
+        <a class="a w-full"
+          ><strong><%= user.posts.length%></strong><span>Posts</span></a
+        >
+      </li>
+      <!-- <li><a><strong>718</strong><span>Followers</span></a></li> -->
+      <!-- <button><a>No</a></button> -->
+      <!-- <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="text" name="filecaption" placeholder="caption" />
+        <input type="file" name="file" />
+        <button type="submit">Upload</button>
+    </form> -->
+
+      <li>
+        <button id="uploaddp" class="upadateBTN" type="submit">
+          Update Profile
+        </button>
+      </li>
+      <li>
+        <a href="add" class="upadateBTN newadded" type="submit">Upload Image</a>
+      </li>
+    </ul>
+    <form
+      id="uploadform"
+      action="/fileupload"
+      method="post"
+      enctype="multipart/form-data"
+      hidden
+    >
+      <input type="file" name="image" />
+    </form>
+  </div>
+</div>
+
+<h2 class="font-bold ml-10 text-xl mb-12">Your posts</h2>
+
+<div class="px-9 py-5 inline-block !flex flex-wrap gap-4 justify-center">
+  <% user?.posts?.forEach(function(elem){%>
+  <div
+    class="box inline-block bg-gray-200 p-[10px] rounded hover:shadow-2xl shadow-indigo-500/40"
+  >
+    <div class="img w-[200px] h-[150px]">
+      <img
+        src="/images/<%= elem?.image %>"
+        class="w-full h-full object-contain"
+        alt="klsdj"
+      />
+    </div>
+    <p class="py-3"><%= elem.title %></p>
+  </div>
+  <%})%>
+</div>
+
+<script>
+  document.querySelector('#uploaddp').addEventListener('click', function(){
+      document.querySelector('#uploadform input').click();
+  })
+  document.querySelector('#uploadform input').addEventListener('change', function(){
+    document.querySelector('#uploadform').submit();
+  })
+</script>
+<% include ./partials/footer.ejs%>

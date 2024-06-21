@@ -1,0 +1,37 @@
+<% include ./partials/header.ejs%>
+<div class="!w-full h-screen bg-gray-700 overflow-hidden relative">
+  <header
+    class="flex items-center justify-between py-7 px-6 text-white relative z-10"
+    style="    background: #c5c3c3;"
+  >
+    <a href="#" class="no-underline font-bold text-xl">Pintres</a>
+    <nav>
+      <ul class="flex items-center">
+        <li>
+          <a
+            href="/login"
+            class="no-underline mr-4 bg-red-400 rounded-full px-5 pt-2 pb-3 transiton duration-200 hover:bg-red-500"
+            >Login</a
+          >
+        </li>
+        <li>
+          <a
+            href="/signup"
+            class="no-underline rounded-full transiton duration-200 px-5 pt-2 pb-3 hover:bg-red-400  duration-200"
+            >Sign Up</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div
+    class="bg-[url('./images/homepage.png')] bg-no-repeat absolute bottom-0 w-screen bg-cover h-full bg-bottom"
+  >
+    <a
+      href="/signup"
+      class="absolute z-10 top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] bg-red-500 px-6 py-2 rounded-full !text-white font-bold"
+      >Get Started</a
+    >
+  </div>
+</div>
+<% include ./partials/footer.ejs%>
